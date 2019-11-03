@@ -19,5 +19,12 @@
             </p>
         </fieldset>
     </form>
+    <?php while($row = $result->fetch_assoc()): ?>
+    <tr>
+        <td><?php echo $row['NRP'] ?></td>
+        <td><?php echo $row['Nama'] ?></td>
+        <td><?php echo "<img src=\"img/".$row['foto']."\" class=\"img-fluid mx-auto d-block\" >" ?></td>
+    </tr>
+    <?php endwhile; ?>
 </body>
 </html>

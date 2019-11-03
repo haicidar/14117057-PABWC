@@ -20,11 +20,22 @@ if(isset($_POST['tambah'])){
 
 if(isset($_POST['hapus'])){
     $nama = $_POST['nama'];
-    $sql = "DELETE FROM mahasiswa WHERE nama=$nama";
+    $sql = "DELETE FROM mahasiswa WHERE Nama=$nama";
     mysqli_query($mysqli, $sql);
 
     $_SESSION['message'] = "data sudah dihapus";
     $_SESSION['tipe'] = "bahaya";
     header('Location: hapus.php');
 }
+
+if(isset($_POST['cari'])){
+    $nama = $_POST['nama'];
+    $sql = "SELECT FROM mahasiswa WHERE Nama=$nama";
+    $result = mysqli_query($mysqli, $sql);
+
+    // $_SESSION['message'] = "data sudah dihapus";
+    // $_SESSION['tipe'] = "bahaya";
+    header('Location: cari.php');
+}
 ?>
+
